@@ -25,6 +25,7 @@ public class HoldUserController {
     /**
      * 获取到用户已有的mod数据并呈现
      * @param steamId id
+     * @param userQq qq
      * @return HoldUserVos
      */
     @Limit(key = "getUserHoldMods", permitsPerSecond = 500, timeout = 10000, msg = "当前排队人数较多，请稍后再试！")
