@@ -20,6 +20,14 @@ repositories {
     maven { url 'https://repo.spring.io/snapshot' }
 }
 
+jar {
+    enabled = true
+}
+
+bootJar {
+    launchScript()
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -35,4 +43,8 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
