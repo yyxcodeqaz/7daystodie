@@ -1,4 +1,5 @@
 # daysToDie Api
+***
 * <font color=#e74c3c> RootAuthority接口 </font>
 * <font color=#f1c40f> UserAuthority接口 </font>
 * <font color=#2ecc71> NoAuthority接口 </font>
