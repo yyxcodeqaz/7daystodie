@@ -18,6 +18,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+    /**
+     * 获取当前用户已有的mod的接口
+     *
+     * @param steamId 当前用户的steamId
+     * @param userQq  当前用户的qq
+     * @return 用户当前持有的MOD商品集合
+     */
     @Override
     public List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq) {
         return userMapper.getUserHoldCommodityList(steamId, userQq);

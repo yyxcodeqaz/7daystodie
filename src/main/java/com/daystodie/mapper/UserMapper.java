@@ -21,6 +21,7 @@ public interface UserMapper extends BaseMapper<User> {
      * 从数据库获取当前用户所持有的所有MOD商品
      *
      * @param steamId 当前用户的steamId
+     * @param userQq  当前用户的QQ
      * @return 用户当前持有的MOD商品集合
      */
     @Select("""
