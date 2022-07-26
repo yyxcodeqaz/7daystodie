@@ -12,17 +12,19 @@
 >>>> * UserQq qq   //当前用户的Qq
 ***
 >### 返回数据
-|       返回参数        |  参数类型  |     参数说明      |
-|:-----------------:|:------:|:-------------:|
-|      userId       |  long  |  当前用户的userId  |
-|      steamId      | String | 当前用户的steamId  |
-|      userQq       | String |    当前用户的Qq    |
-|   authorityName   | String |    当前用户的权限    |
-|    commodityId    |  long  |   当前Mod的Id    |
-|   commodityName   | String |   当前Mod的名称    |
-|   commodityCode   | String |   当前Mod的内容    |
-| commodityVersion  | String |   当前Mod的版本    |
-| holdCommodityTime |  long  | 此用户授权当前MOD的时间 |
+|        返回参数         |  参数类型  |     参数说明      |
+|:-------------------:|:------:|:-------------:|
+|       userId        |  long  |  当前用户的userId  |
+|       steamId       | String | 当前用户的steamId  |
+|       userQq        | String |    当前用户的Qq    |
+|    authorityName    | String |    当前用户的权限    |
+|     commodityId     |  long  |   当前Mod的Id    |
+|    commodityName    | String |   当前Mod的名称    |
+|    commodityCode    | String |   当前Mod的内容    |
+|  commodityVersion   | String |   当前Mod的版本    |
+| commodityContentKey | String | 当前ModCode的key |
+|    commodityKey     | String |   当前Mod的key   |
+|  holdCommodityTime  |  long  | 此用户授权当前MOD的时间 |
 
 ***
 ## Mod Api
