@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * User接口
- * @author 123
+ * @author leaf
  */
 @Component
 @Mapper
@@ -24,30 +24,23 @@ public interface UserMapper extends BaseMapper<User> {
      */
     @Select("""
             SELECT
-            	`user`.user_id,\s
-            	`user`.steam_id,\s
-            	`user`.user_qq,\s
-            	authority.authority_name,\s
-            	hold_user.commodity_id,\s
-            	commodity.commodity_name,\s
-            	commodity.commodity_code,\s
-            	commodity.commodity_version,\s
-            	hold_user.hold_commodity_time
+            	`user`.user_id,
+            	`user`.steam_id,
+            	`user`.user_qq,
+            	authority.authority_name,
+            	hold_user.commodity_id,
+            	commodity.commodity_name,
+            	commodity.commodity_code,
+            	commodity.commodity_version,
+            	commodity.commodity_content_key,
+            	commodity.commodity_key,
+            	hold_user.hold_commodity_time\s
             FROM
             	`user`
-            	INNER JOIN
-            	hold_user
-            	ON\s
-            		`user`.user_id = hold_user.user_id
-            	INNER JOIN
-            	commodity
-            	ON\s
-            		hold_user.commodity_id = commodity.commodity_id
-            	INNER JOIN
-            	authority
-            	ON\s
-            		`user`.authority_id = authority.authority_id
-            		WHERE steam_id=#{steamId} and user_qq=#{userQq}""")
+            	INNER JOIN hold_user ON `user`.user_id = hold_user.user_id
+            	INNER JOIN commodity ON hold_user.commodity_id = commodity.commodity_id
+            	INNER JOIN authority ON `user`.authority_id = authority.authority_id
+            	WHERE steam_id=#{steamId} and user_qq=#{userQq}""")
 
     @Results({
             @Result(column = "user_id", property = "userId", jdbcType = JdbcType.INTEGER),
@@ -58,6 +51,8 @@ public interface UserMapper extends BaseMapper<User> {
             @Result(column = "commodity_name", property = "commodityName", jdbcType = JdbcType.VARCHAR),
             @Result(column = "commodity_code", property = "commodityCode", jdbcType = JdbcType.LONGVARCHAR),
             @Result(column = "commodity_version", property = "commodityVersion", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "commodity_content_key", property = "commodityContentKey", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "commodity_key", property = "commodityKey", jdbcType = JdbcType.VARCHAR),
             @Result(column = "hold_commodity_time", property = "holdCommodityTime", jdbcType = JdbcType.INTEGER)
     })
     List<HoldUserVo> getUserHoldCommodityList(@Param("steamId") String steamId,@Param("userQq") String userQq);

@@ -15,9 +15,21 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class UserAuthorityVo {
+    /**
+     * UserId
+     */
     private long userId;
+    /**
+     * SteamId
+     */
     private String steamId;
+    /**
+     * UserQq
+     */
     private String userQq;
+    /**
+     * 权限名称
+     */
     private String authorityName;
 
 }

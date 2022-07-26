@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 白名单列表dao接口
- * @author 123
+ * @author leaf
  */
 @Mapper
 @Component

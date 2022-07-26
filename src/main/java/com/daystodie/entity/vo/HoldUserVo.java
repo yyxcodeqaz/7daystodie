@@ -51,4 +51,13 @@ public class HoldUserVo {
      * 授权MOD的时间
      */
     private long holdCommodityTime;
+    /**
+     * 当前MOD code的key
+     */
+    private String commodityContentKey;
+    /**
+     * 当前MOD的key
+     */
+    private String commodityKey;
+
 }
