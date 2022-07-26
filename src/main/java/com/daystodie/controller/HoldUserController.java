@@ -1,6 +1,7 @@
 package com.daystodie.controller;
 
 import com.daystodie.entity.vo.HoldUserVo;
+import com.daystodie.entity.vo.ResultVo;
 import com.daystodie.service.impl.UserServiceImpl;
 import com.daystodie.util.Limit;
 import lombok.extern.slf4j.Slf4j;
@@ -31,8 +32,8 @@ public class HoldUserController {
      */
     @Limit(key = "getUserHoldMods", permitsPerSecond = 500, timeout = 10000, msg = "当前排队人数较多，请稍后再试！")
     @PostMapping("/getUserHoldMods")
-    public List<HoldUserVo> holdUserVos(@RequestParam("id") String steamId, @RequestParam("qq") String userQq) {
+    public ResultVo<List<HoldUserVo>>  holdUserVos(@RequestParam("id") String steamId, @RequestParam("qq") String userQq) {
         log.info("获取用户已有的Mods数据");
-        return userService.getUserHoldCommodityList(steamId, userQq);
+        return new ResultVo<>(userService.getUserHoldCommodityList(steamId, userQq));
     }
 }

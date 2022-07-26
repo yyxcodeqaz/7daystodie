@@ -1,6 +1,7 @@
 package com.daystodie.controller;
 
 import com.daystodie.entity.WhiteList;
+import com.daystodie.entity.vo.ResultVo;
 import com.daystodie.service.WhiteListService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class WhiteListController {
     private WhiteListService whiteListService;
 
     @GetMapping("/getWhiteList")
-    public List<WhiteList> whiteLists() {
+    public ResultVo<List<WhiteList>> whiteLists() {
         log.info("调用白名单接口");
-        return whiteListService.whiteLists();
+        return new ResultVo<>(whiteListService.whiteLists());
     }
 }

@@ -2,9 +2,9 @@
 
 ***
 
-* <font color=#e74c3c> RootAuthority接口 </font>
-* <font color=#f1c40f> UserAuthority接口 </font>
-* <font color=#2ecc71> NoAuthority接口 </font>
+* <span style="color: #e74c3c; "> RootAuthority接口 </span>
+* <span style="color: #f1c40f; "> UserAuthority接口 </span>
+* <span style="color: #2ecc71; "> NoAuthority接口 </span>
 
 ***
 
@@ -16,7 +16,7 @@
 >>> ##### 请求参数
 >>>> * SteamId id //当前用户的steamId
 >>>> * UserQq qq //当前用户的Qq
-***
+
 > ### 返回数据
 
 |        返回参数         |  参数类型  |     参数说明      |
@@ -32,8 +32,25 @@
 | commodityContentKey | String | 当前ModCode的key |
 |    commodityKey     | String |   当前Mod的key   |
 |  holdCommodityTime  |  long  | 此用户授权当前MOD的时间 |
-
+>### 数据样式
+```json
+{
+  "userId": 1,
+  "steamId": "123",
+  "userQq": "123",
+  "authorityName": "root",
+  "commodityId": 1,
+  "commodityName": "asd",
+  "commodityCode": "awdawdaw",
+  "commodityVersion": "144",
+  "holdCommodityTime": 123456,
+  "commodityContentKey": "kk",
+  "commodityKey": "kk"
+}
+```
 ***
+***
+
 
 ## Mod Api
 
@@ -51,3 +68,14 @@
 |  whiteListNameDesc   | String | 白名单ModDesc |
 | whiteListNameAuthor  | String | 白名单Mod的作者  |
 | whiteListNameVersion | String | 白名单Mod的版本  |
+>### 数据样式
+```json
+{
+  "whiteListId": 1,
+  "whiteListName": "asd",
+  "whiteListOnline": 1,
+  "whiteListNameDesc": "ad13w",
+  "whiteListNameAuthor": "dawda",
+  "whiteListNameVersion": "144"
+}
+```
