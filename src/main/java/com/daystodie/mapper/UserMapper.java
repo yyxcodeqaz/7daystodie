@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * User接口
+ *
  * @author leaf
  */
 @Component
@@ -55,5 +56,5 @@ public interface UserMapper extends BaseMapper<User> {
             @Result(column = "commodity_key", property = "commodityKey", jdbcType = JdbcType.VARCHAR),
             @Result(column = "hold_commodity_time", property = "holdCommodityTime", jdbcType = JdbcType.INTEGER)
     })
-    List<HoldUserVo> getUserHoldCommodityList(@Param("steamId") String steamId,@Param("userQq") String userQq);
+    List<HoldUserVo> getUserHoldCommodityList(@Param("steamId") String steamId, @Param("userQq") String userQq);
 }

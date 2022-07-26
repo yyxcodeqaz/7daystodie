@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 接口限流的注解
+ *
  * @author leaf
  */
 @Retention(RetentionPolicy.RUNTIME)

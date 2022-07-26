@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScans;
  * Springboot启动类
  * MapperScan 扫描Mapper接口
  * ComponentScan 扫描Component实体类
+ *
  * @author leaf
  */
 @SpringBootApplication

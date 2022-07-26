@@ -10,14 +10,16 @@ import java.util.List;
 
 /**
  * UserService的实现类
+ *
  * @author leaf
  */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
+
     @Override
-    public List<HoldUserVo> getUserHoldCommodityList(String steamId,String userQq) {
-        return userMapper.getUserHoldCommodityList(steamId,userQq);
+    public List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq) {
+        return userMapper.getUserHoldCommodityList(steamId, userQq);
     }
 }
