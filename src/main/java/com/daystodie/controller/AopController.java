@@ -4,6 +4,11 @@ import com.daystodie.entity.vo.ResultVo;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 
+/**
+ * 统一异常拦截
+ *
+ * @author leaf
+ */
 @Slf4j
 public class AopController {
     public Object handlerControllerMethod(ProceedingJoinPoint pjp) {
@@ -28,7 +33,7 @@ public class AopController {
         if (e instanceof Exception) {
             result.setMsg(e.getLocalizedMessage());
             result.setCode(ResultVo.FAIL);
-        }  else {
+        } else {
             log.error(pjp.getSignature() + " error ", e);
             //TODO 未知的异常，应该格外注意，可以发送邮件通知等
             assert false;

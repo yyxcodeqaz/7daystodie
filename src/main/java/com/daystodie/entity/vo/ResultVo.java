@@ -6,6 +6,10 @@ import lombok.ToString;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * 统一json数据格式
+ * @author leaf
+ */
 @Data
 @ToString
 public class ResultVo<T>  {
