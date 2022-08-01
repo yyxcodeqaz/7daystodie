@@ -8,11 +8,12 @@ import java.io.Serializable;
 
 /**
  * 统一json数据格式
+ *
  * @author leaf
  */
 @Data
 @ToString
-public class ResultVo<T>  {
+public class ResultVo<T> {
 
     public static final int NO_LOGIN = -1;
 

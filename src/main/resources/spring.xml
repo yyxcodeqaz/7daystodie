@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:beans="http://www.springframework.org/schema/c"
+       xmlns:beans="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- aop -->
-    <aop:aspectj-autoproxy />
-    <beans:bean id="controllerAop" class="xxx.common.aop.ControllerAOP" />
+    <aop:aspectj-autoproxy/>
+    <beans:bean id="controllerAop" class="com.daystodie.controller.AopController"/>
     <aop:config>
         <aop:aspect id="myAop" ref="controllerAop">
             <aop:pointcut id="target"
-                          expression="execution(public com.daystodie.entity.vo.ResultVo *(..))" />
-            <aop:around method="handlerControllerMethod" pointcut-ref="target" />
+                          expression="execution(public com.daystodie.entity.vo.ResultVo *(..))"/>
+            <aop:around method="handlerControllerMethod" pointcut-ref="target"/>
         </aop:aspect>
     </aop:config>
 </beans>
