@@ -1,6 +1,8 @@
 package com.daystodie.service.impl;
 
 import com.daystodie.entity.vo.HoldUserVo;
+import com.daystodie.exception.BaseException;
+import com.daystodie.exception.BaseExceptionEnum;
 import com.daystodie.mapper.UserMapper;
 import com.daystodie.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq) {
+        if (null == steamId || "".equals(steamId)|| null == userQq|| "".equals(userQq)) {
+            throw new BaseException(BaseExceptionEnum.LOGIN_EXPIRE);
+        }
         return userMapper.getUserHoldCommodityList(steamId, userQq);
     }
 }

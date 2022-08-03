@@ -1,4 +1,4 @@
-package com.daystodie.aop;
+package com.daystodie.exception;
 
 import lombok.extern.slf4j.Slf4j;
 

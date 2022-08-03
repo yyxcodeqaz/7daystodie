@@ -1,7 +1,6 @@
 package com.daystodie.controller;
 
 import com.daystodie.entity.WhiteList;
-import com.daystodie.entity.vo.ResultVo;
 import com.daystodie.service.WhiteListService;
 import com.daystodie.util.Limit;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +27,8 @@ public class WhiteListController {
      */
     @Limit(key = "getWhiteList", permitsPerSecond = 500, timeout = 10000, msg = "白名单请求次数过多，请稍后再试！")
     @GetMapping("/getWhiteList")
-    public ResultVo<List<WhiteList>> whiteLists() {
+    public List<WhiteList> whiteLists() {
         log.info("调用白名单接口");
-        return new ResultVo<>(whiteListService.whiteLists());
+        return whiteListService.whiteLists();
     }
 }

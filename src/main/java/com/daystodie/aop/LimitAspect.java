@@ -1,5 +1,6 @@
 package com.daystodie.aop;
 
+import com.daystodie.exception.LimitException;
 import com.daystodie.util.Limit;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.RateLimiter;
