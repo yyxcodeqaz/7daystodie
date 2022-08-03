@@ -1,4 +1,4 @@
-package com.daystodie.aop;
+package com.daystodie.aspect;
 
 import com.daystodie.exception.LimitException;
 import com.daystodie.util.Limit;
