@@ -64,6 +64,6 @@ public class Result<T> implements Serializable {
      * @return
      */
     public static <T> Result success(T data) {
-        return new Result(BaseExceptionEnum.SUCESS, data);
+        return new Result(BaseExceptionEnum.SUCCESS, data);
     }
 }

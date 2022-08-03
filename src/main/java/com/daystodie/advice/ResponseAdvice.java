@@ -31,7 +31,8 @@ public class ResponseAdvice implements ResponseBodyAdvice {
             //返回string类型
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.writeValueAsString(Result.success(body));
-        } else if (body == null) { //返回void
+        } else if (body == null) {
+            //返回void
             return Result.success(null);
         } else {
             return Result.success(body);
