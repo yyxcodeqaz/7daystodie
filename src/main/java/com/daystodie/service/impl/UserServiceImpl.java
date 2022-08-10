@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     /**
-     * 获取当前用户已有的mod的接口
+     * 获取当前用户已有的mod实现方法
      *
      * @param steamId      当前用户的steamId
      * @param userQq       当前用户的qq
@@ -40,18 +40,21 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 插入用户
+     * 插入用户实现方法
      *
      * @param user 用户实体类
      * @return 是否成功插入用户
      */
     @Override
     public int addUser(User user) {
+        if (null != user) {
+            throw new BaseException(BaseExceptionEnum.FAIL);
+        }
         return userMapper.insert(user);
     }
 
     /**
-     * 更改用户信息
+     * 更改用户信息实现方法
      *
      * @param user   用户实体类
      * @param userId 用户id
@@ -59,26 +62,46 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public int updateUser(User user, Long userId) {
+        if (userId < 1 && user != null) {
+            throw new BaseException(BaseExceptionEnum.FAIL);
+        }
         QueryWrapper<User> updateWrapper = new QueryWrapper<>();
         updateWrapper.eq("user_id", userId);
         return userMapper.update(user, updateWrapper);
     }
 
     /**
-     * 删除用户
+     * 删除用户实现方法
      *
      * @param userId 用户ID
      * @return 1成功 0失败
      */
     @Override
     public int deleteUser(Long userId) {
+        if (userId < 1) {
+            throw new BaseException(BaseExceptionEnum.FAIL);
+        }
         QueryWrapper<User> deleteWrapper = new QueryWrapper<>();
         deleteWrapper.eq("user_id", userId);
         return userMapper.delete(deleteWrapper);
     }
 
     /**
-     * 获取全部的用户
+     * 批量删除user实现方法
+     *
+     * @param userIds 用户ID数组
+     */
+    @Override
+    public void deleteUsers(Long[] userIds) {
+        for (Long userId : userIds) {
+            QueryWrapper<User> deleteWrapper = new QueryWrapper<>();
+            deleteWrapper.eq("user_id", userId);
+            userMapper.delete(deleteWrapper);
+        }
+    }
+
+    /**
+     * 获取全部的用户实现方法
      *
      * @return List<User>
      */
@@ -88,13 +111,16 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 获取单一用户
+     * 获取单一用户实现方法
      *
      * @param userId 用户ID
      * @return User
      */
     @Override
     public User user(Long userId) {
+        if (userId < 1) {
+            throw new BaseException(BaseExceptionEnum.FAIL);
+        }
         QueryWrapper<User> selectWrapper = new QueryWrapper<>();
         selectWrapper.eq("user_id", userId);
         return userMapper.selectOne(selectWrapper);

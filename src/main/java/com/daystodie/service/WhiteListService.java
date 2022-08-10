@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface WhiteListService {
     /**
-     * 获取全部白名单
+     * 获取全部白名单接口
      *
      * @return List<WhiteList>
      */

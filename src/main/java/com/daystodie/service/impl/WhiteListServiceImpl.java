@@ -19,7 +19,7 @@ public class WhiteListServiceImpl implements WhiteListService {
     WhiteListMapper whiteListMapper;
 
     /**
-     * 获取全部白名单的接口的实现方法
+     * 获取全部白名单实现方法
      *
      * @return WhiteList
      */

@@ -29,6 +29,7 @@ public class UserController {
     @Limit(key = "addUser", permitsPerSecond = 500, timeout = 10000, msg = "当前排队人数较多，请稍后再试！")
     @PostMapping("/addUser")
     public String addUser(@RequestBody User user) {
+        log.info("调用添加用户接口");
         int i = userService.addUser(user);
         if (i > 0) {
             return "添加成功";

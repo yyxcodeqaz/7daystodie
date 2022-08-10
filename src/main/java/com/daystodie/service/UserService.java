@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface UserService {
     /**
-     * 获取当前用户所持有的所有MOD商品的服务层
+     * 获取当前用户所持有的所有MOD商品的接口
      *
      * @param steamId      当前用户的steamId
      * @param userQq       当前用户的qq
@@ -22,7 +22,7 @@ public interface UserService {
     List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq, String commodityKey);
 
     /**
-     * 插入用户
+     * 插入用户接口
      *
      * @param user 用户实体类
      * @return 1成功 0失败
@@ -30,7 +30,7 @@ public interface UserService {
     int addUser(User user);
 
     /**
-     * 更改用户信息
+     * 更改用户信息接口
      *
      * @param user   用户实体类
      * @param userId 用户id
@@ -39,7 +39,7 @@ public interface UserService {
     int updateUser(User user, Long userId);
 
     /**
-     * 删除用户
+     * 删除用户接口
      *
      * @param userId 用户ID
      * @return 1成功 0失败
@@ -47,14 +47,21 @@ public interface UserService {
     int deleteUser(Long userId);
 
     /**
-     * 获取全部的用户
+     * 批量删除接口
+     *
+     * @param userIds 用户ID数组
+     */
+    void deleteUsers(Long[] userIds);
+
+    /**
+     * 获取全部的用户接口
      *
      * @return List<User>
      */
     List<User> users();
 
     /**
-     * 获取单一用户
+     * 获取单一用户接口
      *
      * @param userId 用户ID
      * @return User
