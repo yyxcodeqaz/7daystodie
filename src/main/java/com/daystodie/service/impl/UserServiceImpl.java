@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
      *
      * @param user   用户实体类
      * @param userId 用户id
-     * @return 更改用户信息
+     * @return 1成功 0失败
      */
     @Override
     public int updateUser(User user, Long userId) {
@@ -68,12 +68,35 @@ public class UserServiceImpl implements UserService {
      * 删除用户
      *
      * @param userId 用户ID
-     * @return 删除用户
+     * @return 1成功 0失败
      */
     @Override
     public int deleteUser(Long userId) {
         QueryWrapper<User> deleteWrapper = new QueryWrapper<>();
         deleteWrapper.eq("user_id", userId);
         return userMapper.delete(deleteWrapper);
+    }
+
+    /**
+     * 获取全部的用户
+     *
+     * @return List<User>
+     */
+    @Override
+    public List<User> users() {
+        return userMapper.selectList(null);
+    }
+
+    /**
+     * 获取单一用户
+     *
+     * @param userId 用户ID
+     * @return User
+     */
+    @Override
+    public User user(Long userId) {
+        QueryWrapper<User> selectWrapper = new QueryWrapper<>();
+        selectWrapper.eq("user_id", userId);
+        return userMapper.selectOne(selectWrapper);
     }
 }

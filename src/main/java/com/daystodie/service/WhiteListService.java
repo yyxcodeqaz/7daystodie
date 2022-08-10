@@ -13,7 +13,7 @@ public interface WhiteListService {
     /**
      * 获取全部白名单
      *
-     * @return WhiteList
+     * @return List<WhiteList>
      */
     List<WhiteList> whiteLists();
 }

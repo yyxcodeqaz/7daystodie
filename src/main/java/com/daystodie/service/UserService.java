@@ -25,7 +25,7 @@ public interface UserService {
      * 插入用户
      *
      * @param user 用户实体类
-     * @return 是否成功插入用户
+     * @return 1成功 0失败
      */
     int addUser(User user);
 
@@ -34,7 +34,7 @@ public interface UserService {
      *
      * @param user   用户实体类
      * @param userId 用户id
-     * @return 更改用户信息
+     * @return 1成功 0失败
      */
     int updateUser(User user, Long userId);
 
@@ -42,7 +42,22 @@ public interface UserService {
      * 删除用户
      *
      * @param userId 用户ID
-     * @return 删除用户
+     * @return 1成功 0失败
      */
     int deleteUser(Long userId);
+
+    /**
+     * 获取全部的用户
+     *
+     * @return List<User>
+     */
+    List<User> users();
+
+    /**
+     * 获取单一用户
+     *
+     * @param userId 用户ID
+     * @return User
+     */
+    User user(Long userId);
 }

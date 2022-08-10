@@ -23,7 +23,8 @@ public class WhiteListController {
 
     /**
      * 获取全部白名单
-     * @return WhiteLists
+     *
+     * @return List<WhiteList>
      */
     @Limit(key = "getWhiteList", permitsPerSecond = 500, timeout = 10000, msg = "白名单请求次数过多，请稍后再试！")
     @GetMapping("/getWhiteList")
