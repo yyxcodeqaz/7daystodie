@@ -16,7 +16,8 @@ public interface UserService {
      *
      * @param steamId 当前用户的steamId
      * @param userQq  当前用户的qq
+     * @param commodityKey  当前商品的key
      * @return 用户当前持有的MOD商品集合
      */
-    List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq);
+    List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq, String commodityKey);
 }

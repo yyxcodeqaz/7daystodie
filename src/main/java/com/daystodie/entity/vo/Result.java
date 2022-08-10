@@ -60,6 +60,15 @@ public class Result<T> implements Serializable {
     }
 
     /**
+     * 404NotFound
+     *
+     * @return
+     */
+    public static Result notFound() {
+        return new Result(BaseExceptionEnum.NOT_FOUND);
+    }
+
+    /**
      * @param data
      * @return
      */

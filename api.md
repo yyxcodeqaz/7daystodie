@@ -16,6 +16,7 @@
 >>> ##### 请求参数
 >>>> * SteamId id //当前用户的steamId
 >>>> * UserQq qq //当前用户的Qq
+>>>> * commodityKey key //当前mod的key
 
 > ### 返回数据
 

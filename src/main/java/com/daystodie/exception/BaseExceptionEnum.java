@@ -15,6 +15,7 @@ public enum BaseExceptionEnum implements SuperEnumFace {
      */
     SUCCESS(200, "操作成功"),
     FAIL(400, "操作失败"),
+    NOT_FOUND(404, "无法访问"),
     ERROR(500, "服务器异常，请稍后重试"),
     LOGIN_EXPIRE(600, "获取失败，请重新获取");
 

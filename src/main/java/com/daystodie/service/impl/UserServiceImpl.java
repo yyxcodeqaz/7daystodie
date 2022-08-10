@@ -25,13 +25,14 @@ public class UserServiceImpl implements UserService {
      *
      * @param steamId 当前用户的steamId
      * @param userQq  当前用户的qq
+     * @param commodityKey  当前商品的key
      * @return 用户当前持有的MOD商品集合
      */
     @Override
-    public List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq) {
+    public List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq,String commodityKey) {
         if (null == steamId || "".equals(steamId)|| null == userQq|| "".equals(userQq)) {
             throw new BaseException(BaseExceptionEnum.LOGIN_EXPIRE);
         }
-        return userMapper.getUserHoldCommodityList(steamId, userQq);
+        return userMapper.getUserHoldCommodityList(steamId, userQq,commodityKey);
     }
 }
