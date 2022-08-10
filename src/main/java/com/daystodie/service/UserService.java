@@ -1,7 +1,7 @@
 package com.daystodie.service;
 
+import com.daystodie.entity.User;
 import com.daystodie.entity.vo.HoldUserVo;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,4 +20,12 @@ public interface UserService {
      * @return 用户当前持有的MOD商品集合
      */
     List<HoldUserVo> getUserHoldCommodityList(String steamId, String userQq, String commodityKey);
+
+    /**
+     * 插入用户
+     *
+     * @param user 用户实体类
+     * @return 是否成功插入用户
+     */
+    int addUser(User user);
 }

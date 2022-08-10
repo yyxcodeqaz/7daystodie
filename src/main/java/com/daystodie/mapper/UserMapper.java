@@ -20,9 +20,9 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 从数据库获取当前用户所持有的所有MOD商品
      *
-     * @param steamId 当前用户的steamId
-     * @param userQq  当前用户的QQ
-     * @param commodityKey  当前商品的key
+     * @param steamId      当前用户的steamId
+     * @param userQq       当前用户的QQ
+     * @param commodityKey 当前商品的key
      * @return 用户当前持有的MOD商品集合
      */
     @Select("""
@@ -59,15 +59,4 @@ public interface UserMapper extends BaseMapper<User> {
             @Result(column = "hold_commodity_time", property = "holdCommodityTime", jdbcType = JdbcType.INTEGER)
     })
     List<HoldUserVo> getUserHoldCommodityList(@Param("steamId") String steamId, @Param("userQq") String userQq, @Param("commodityKey") String commodityKey);
-
-    /**
-     * 插入用户
-     *
-     * @param user 用户实体类
-     * @return 是否成功插入用户
-     */
-    @Insert("""
-                        
-            """)
-    Boolean addUser(User user);
 }

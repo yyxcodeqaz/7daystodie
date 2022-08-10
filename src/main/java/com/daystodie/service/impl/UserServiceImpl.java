@@ -1,5 +1,6 @@
 package com.daystodie.service.impl;
 
+import com.daystodie.entity.User;
 import com.daystodie.entity.vo.HoldUserVo;
 import com.daystodie.exception.BaseException;
 import com.daystodie.exception.BaseExceptionEnum;
@@ -33,6 +34,12 @@ public class UserServiceImpl implements UserService {
         if (null == steamId || "".equals(steamId)|| null == userQq|| "".equals(userQq)) {
             throw new BaseException(BaseExceptionEnum.LOGIN_EXPIRE);
         }
+
         return userMapper.getUserHoldCommodityList(steamId, userQq,commodityKey);
+    }
+
+    @Override
+    public int addUser(User user) {
+        return userMapper.insert(user);
     }
 }
